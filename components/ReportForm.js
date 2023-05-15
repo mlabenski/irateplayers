@@ -3,8 +3,6 @@ import styles from "@components/FeedbackForm.module.css";
 
 const ReportForm = ({ matchId, playerName }) => {
     const [isSubmitted, setIsSubmitted] = useState(false);
-    console.log(matchId);
-    console.log(playerName);
 
     const handleSubmit = (event) => {
         event.preventDefault();
