@@ -1,13 +1,20 @@
 import { useState, useEffect } from "react";
+import ReportForm from "./ReportForm";
+
+const Modal = ({ show, onClose, children }) => {
+    // ... modal logic here ...
+};
 
 export default function MatchHistory({ summonerName }) {
     const [matches, setMatches] = useState([]);
-    const [selectedMatchId, setSelectedMatchId] = useState(null);
+    let [selectedMatchId, setSelectedMatchId] = useState(null);
     useEffect(() => {
         if (summonerName) {
             fetchMatchHistory();
         }
     }, [summonerName]);
+
+
 
     const fetchMatchHistory = async () => {
         try {
@@ -21,6 +28,7 @@ export default function MatchHistory({ summonerName }) {
     };
     const handleReport = (gameId) => {
         // Implement the report feature logic here
+        setSelectedMatchId(gameId);
         console.log(`Reporting match with ID: ${gameId}`);
     };
 
@@ -73,6 +81,9 @@ export default function MatchHistory({ summonerName }) {
                 })}
                 </tbody>
             </table>
+            {selectedMatchId && (
+                    <ReportForm matchId={selectedMatchId} playerName={summonerName} />
+            )}
         </div>
     );
 }
