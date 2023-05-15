@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
-export default function FeedbackForm() {
+const CurrentGame = () => {
     const [summonerName, setSummonerName] = useState('');
     const [currentGame, setCurrentGame] = useState(null);
 
     const fetchCurrentGame = async () => {
         try {
-            const response = await fetch(`/api/current_game?summoner_name=${summonerName}`);
+            const response = await fetch(`api/current_game/?summoner_name=${summonerName}`);
             const data = await response.json();
             setCurrentGame(data);
         } catch (error) {
@@ -43,4 +43,6 @@ export default function FeedbackForm() {
             ) : null}
         </div>
     );
-}
+};
+
+export default CurrentGame;
