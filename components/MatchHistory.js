@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 export default function MatchHistory({ summonerName }) {
     const [matches, setMatches] = useState([]);
-
+    const [selectedMatchId, setSelectedMatchId] = useState(null);
     useEffect(() => {
         if (summonerName) {
             fetchMatchHistory();
@@ -11,7 +11,7 @@ export default function MatchHistory({ summonerName }) {
 
     const fetchMatchHistory = async () => {
         try {
-            console.log(`Searching for the summoner name of: ${summonerName} `)
+            // Run a test or two here ?
             const response = await fetch(`/api/match_history?summoner_name=${summonerName}`);
             const data = await response.json();
             setMatches(data);
@@ -19,6 +19,14 @@ export default function MatchHistory({ summonerName }) {
             console.error('Error fetching match history:', error);
         }
     };
+    const handleReport = (gameId) => {
+        // Implement the report feature logic here
+        console.log(`Reporting match with ID: ${gameId}`);
+    };
+
+    const handleCloseModal = () => {
+        onSelectedMatchId(null);
+    }
 
     const getMatchResult = (match) => {
         const participant = match.info.participants.find(
@@ -52,7 +60,8 @@ export default function MatchHistory({ summonerName }) {
                     const { win, champion, kills, deaths, assists } = getMatchResult(match);
 
                     return (
-                        <tr key={match.info.gameId}>
+                        <tr key={match.info.gameId} className="table-row"
+                            onClick={() => handleReport(match.info.gameId)} >
                             <td>{match.info.gameId}</td>
                             <td>{champion}</td>
                             <td>{win}</td>

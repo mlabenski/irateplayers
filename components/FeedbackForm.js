@@ -1,46 +1,30 @@
-import { useState } from 'react';
+import styles from './FeedbackForm.module.css'
 
 export default function FeedbackForm() {
-    const [summonerName, setSummonerName] = useState('');
-    const [currentGame, setCurrentGame] = useState(null);
-
-    const fetchCurrentGame = async () => {
-        try {
-            const response = await fetch(`/api/current_game?summoner_name=${summonerName}`);
-            const data = await response.json();
-            setCurrentGame(data);
-        } catch (error) {
-            console.error('Error fetching current game:', error);
-        }
-    };
-
-    const handleSummonerNameChange = (event) => {
-        setSummonerName(event.target.value);
-    };
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        fetchCurrentGame();
-    };
-
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    value={summonerName}
-                    onChange={handleSummonerNameChange}
-                    placeholder="Enter summoner name"
-                />
-                <button type="submit">Search</button>
-            </form>
+        <form
+            className={styles.form}
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            name="feedback"
+            method="POST"
+            action="/success"
+        >
+            <input type="hidden" name="form-name" value="feedback" />
+            <p className={styles.hidden}>
+                <label>
+                    Don’t fill this out if you’re human: <input name="bot-field" />
+                </label>
+            </p>
 
-            {currentGame ? (
-                <div>
-                    <h2>Current Game Information</h2>
-                    <pre>{JSON.stringify(currentGame, null, 2)}</pre>
-                </div>
-            ) : null}
-        </div>
-    );
+            <label htmlFor="name">Name</label>
+            <input id="name" className={styles['form-field']} type="text" name="name" />
+
+            <label htmlFor="email">Email</label>
+            <input id="email" className={styles['form-field']} type="email" name="email" required />
+            <label htmlFor="feedback">What is your feedback?</label>
+            <textarea id="feedback" className={styles['form-field']} wrap="soft" name="feedback" required></textarea>
+            <button className={styles.button} type="submit">Submit</button>
+        </form>
+    )
 }

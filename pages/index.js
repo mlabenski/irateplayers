@@ -9,6 +9,7 @@ import { useState } from "react";
 export default function Home() {
     const [showMatchHistory, setShowMatchHistory] = useState(false);
     const [summonerName, setSummonerName] = useState('');
+    const [showModal, setShowModal] = useState(false);
     const [finalSummonerName, setFinalSummonerName] = useState('');
     const handleSummonerNameChange = (event) => {
         setSummonerName(event.target.value);
