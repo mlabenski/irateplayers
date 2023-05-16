@@ -34,7 +34,8 @@ export default function ReportForm({ matchId, playerName }) {
             <input
                 id="matchId"
                 className={styles["form-field"]}
-                name="matchId"
+                type="number"
+                name="text"
                 value={matchId}
             />
             <label htmlFor="playerName">Player Name</label>
@@ -42,6 +43,7 @@ export default function ReportForm({ matchId, playerName }) {
                 id="playerName"
                 className={styles["form-field"]}
                 name="playerName"
+                type="text"
                 value={playerName}
             />
             <label htmlFor="email">Email</label>
