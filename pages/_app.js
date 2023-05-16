@@ -1,4 +1,4 @@
-import Navbar from '../components/Navbar';
+import Navbar from '../components/Navbar.jsx';
 import '../styles/globals.css';
 import 'tailwindcss/tailwind.css';
 
