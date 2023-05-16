@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "@components/FeedbackForm.module.css";
+import styles from './FeedbackForm.module.css'
 
 const ReportForm = ({ matchId, playerName }) => {
     const [isSubmitted, setIsSubmitted] = useState(false);
@@ -20,33 +20,24 @@ const ReportForm = ({ matchId, playerName }) => {
             className={styles.form}
             data-netlify="true"
             data-netlify-honeypot="bot-field"
-            name="report-form"
+            name="report"
             method="POST"
             action="/success"
-            onSubmit={handleSubmit}
         >
-            <input type="hidden" name="form-name" value="report-form" />
+            <input type="hidden" name="form-name" value="report" />
             <p className={styles.hidden}>
                 <label>
                     Don’t fill this out if you’re human: <input name="bot-field" />
                 </label>
-                <label><input type="hidden" name="matchId" id="matchId" value={matchId} /></label>
-                <label><input type="hidden" name="playerName" id="playerName" value={playerName} /></label>
             </p>
-
-            <p>
-                <label>Your Name: <input type="text" name="name"/></label>
-            </p>
-            <p>
-                <label>Rating: <select name="role[]" multiple>
-                    <option value="leader">Bad Player</option>
-                    <option value="leader">Good Player</option>
-                </select></label>
-            </p>
-            <label htmlFor="teamwork">
-                Teamwork:</label>
-                <input type="number" id="teamwork" name="teamwork" min="0" max="5"></input>
-            <label>Additional Comments: <input type="text" id="comments" name="comments"/></label>
+            <label htmlFor="matchId">Name</label>
+            <input type="hidden" name="matchId" id="matchId" type="text" value={matchId} />
+            <label htmlFor="playerName">Name</label>
+            <input type="hidden" name="playerName" id="playerName" type="text" value={playerName} />
+            <label htmlFor="email">Email</label>
+            <input id="email" className={styles['form-field']} type="email" name="email" required />
+            <label htmlFor="feedback">What is your feedback?</label>
+            <textarea id="feedback" className={styles['form-field']} wrap="soft" name="feedback" required></textarea>
 
             <button type="submit">Submit Report</button>
         </form>
