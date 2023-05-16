@@ -2,6 +2,7 @@ export default async function handler(req, res) {
     const { summoner_name } = req.query;
 
     try {
+        console.log('this ran atleast ')
         const response = await fetch(
             // Can we switch this endpoint depending on netlify dev vs the live environment?
             `https://tranquil-oasis-93890.herokuapp.com/match_history/${encodeURIComponent(summoner_name)}`
