@@ -38,11 +38,11 @@ export default function ReportForm({ matchId, playerName }) {
                 name="text"
                 value={matchId}
             />
-            <label htmlFor="playerName">Player Name</label>
+            <label htmlFor="name">Player Name</label>
             <input
-                id="playerName"
+                id="name"
                 className={styles["form-field"]}
-                name="playerName"
+                name="name"
                 type="text"
                 value={playerName}
             />
