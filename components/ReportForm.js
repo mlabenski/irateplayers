@@ -34,7 +34,6 @@ export default function ReportForm({ matchId, playerName }) {
             <input
                 id="matchId"
                 className={styles["form-field"]}
-                type="hidden"
                 name="matchId"
                 value={matchId}
             />
@@ -42,7 +41,6 @@ export default function ReportForm({ matchId, playerName }) {
             <input
                 id="playerName"
                 className={styles["form-field"]}
-                type="hidden"
                 name="playerName"
                 value={playerName}
             />
