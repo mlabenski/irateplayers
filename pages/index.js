@@ -6,6 +6,8 @@ import MatchHistory from "@components/MatchHistory";
 import FeedbackForm from "@components/FeedbackForm";
 import JokeBlock from "@components/JokeBlock";
 import { useState } from "react";
+import 'tailwindcss/tailwind.css';
+import styles from './Home.module.css';
 export default function Home() {
     const [showMatchHistory, setShowMatchHistory] = useState(false);
     const [summonerName, setSummonerName] = useState('');
@@ -18,33 +20,37 @@ export default function Home() {
     const handleSubmit = (event) => {
         event.preventDefault();
         setFinalSummonerName(summonerName);
-        setShowMatchHistory(true);
+        setShowMatchHistory(true);;
         // Handle form submission, such as fetching the match history based on the summonerName
     };
 
     return (
     <div className="container">
       <Head>
-        <title>Next.js Toolbox</title>
-        <link rel="icon" href="/favicon.ico" />
+          <title>i Rate Players</title>
+          <meta name='description' content='Search league of legend summoners and rate their performances.' />
+          <link rel='icon' href='/favicon.ico' />
       </Head>
 
       <main>
-        <Header title="Next.js Toolbox" />
+        <Header title="Search to begin: Rate Players in LoL" />
         <hr />
-          <div>
-              <form onSubmit={handleSubmit}>
+              <div className={`${styles.container} bg-dark-theme`}>
+                  <div className={`${styles.content} flex justify-center items-center h-screen`}>
+              <form onSubmit={handleSubmit} className={styles.form}>
                   <input
                       type="text"
                       value={summonerName}
                       onChange={(e) => setSummonerName(e.target.value)}
                       placeholder="Enter summoner name"
+                      className={styles.input}
                   />
-                  <button type="submit">Search</button>
+                  <button type="submit" className={styles.button}>Search</button>
               </form>
 
               {showMatchHistory && <MatchHistory summonerName={finalSummonerName} />}
-          </div>
+                </div>
+              </div>
         <p className="description">
           Here's an example of a Netlify Form! When you fill this out, the
           submissions can be found in the Netlify Admin site.

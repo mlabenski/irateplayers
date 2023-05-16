@@ -3,21 +3,21 @@ export default function Header({ title }) {
     <>
       <h1 className="title">{title}</h1>
       <p>
-        Hi 👋! Lets make a quick edit right here -  This template gives you a{" "}
-        <a href="https://nextjs.org/">Next.js</a> app with the scaffolding for{" "}
+        Hi 👋! Welcome to I_Rate_Players - Your League of Legends Grading Platform.{" "}
+        <a href="https://nextjs.org/">Review</a> previous matchese and file reports.{" "}
         <a href="https://www.netlify.com/products/functions/">
-          Netlify Functions
+          I_Rate_Players
         </a>
-        , <a href="https://www.netlify.com/products/forms/">Forms</a>, and{" "}
-        <a href="https://docs.netlify.com/routing/redirects/">Redirects</a>. Our
-        aim was to give you the code you would need to hit the ground running
+        , <a href="https://www.netlify.com/products/forms/">submit a report</a>, and{" "}
+        <a href="https://docs.netlify.com/routing/redirects/">crowd source</a>. Our
+        aim is to unite the league community and hit the ground running
         with a few fun features.
       </p>
 
       <p>
         You can find the code for this project on GitHub at{" "}
-        <a href="https://github.com/netlify-templates/nextjs-toolbox">
-          https://github.com/netlify-templates/nextjs-toolbox
+        <a href="https://github.com/mlabenski/irateplayers">
+            https://github.com/mlabenski/irateplayers
         </a>
         ! Happy coding!
       </p>
