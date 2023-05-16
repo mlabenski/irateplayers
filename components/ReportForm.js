@@ -29,20 +29,23 @@ const ReportForm = ({ matchId, playerName }) => {
                 <label>
                     Don’t fill this out if you’re human: <input name="bot-field" />
                 </label>
+                <label><input type="hidden" name="matchId" id="matchId" value={matchId} /></label>
+                <label><input type="hidden" name="playerName" id="playerName" value={playerName} /></label>
             </p>
-            <input type="hidden" name="matchId" value={matchId} />
-            <input type="hidden" name="playerName" value={playerName} />
 
-            {/* Add other form fields as needed */}
+            <p>
+                <label>Your Name: <input type="text" name="name"/></label>
+            </p>
+            <p>
+                <label>Rating: <select name="role[]" multiple>
+                    <option value="leader">Bad Player</option>
+                    <option value="leader">Good Player</option>
+                </select></label>
+            </p>
             <label htmlFor="teamwork">
-                Teamwork:
+                Teamwork:</label>
                 <input type="number" id="teamwork" name="teamwork" min="0" max="5"></input>
-            </label>
-
-            <label>
-                Additional Comments:
-                <textarea name="comments" required />
-            </label>
+            <label>Additional Comments: <input type="text" id="comments" name="comments"/></label>
 
             <button type="submit">Submit Report</button>
         </form>
