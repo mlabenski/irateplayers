@@ -6,7 +6,6 @@ import MatchHistory from "@components/MatchHistory";
 import FeedbackForm from "@components/FeedbackForm";
 import JokeBlock from "@components/JokeBlock";
 import { useState } from "react";
-import 'tailwindcss/tailwind.css';
 import styles from './Home.module.css';
 export default function Home() {
     const [showMatchHistory, setShowMatchHistory] = useState(false);
