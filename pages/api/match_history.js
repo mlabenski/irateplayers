@@ -5,7 +5,7 @@ export default async function handler(req, res) {
         console.log('this ran atleast ')
         const response = await fetch(
             // Can we switch this endpoint depending on netlify dev vs the live environment?
-            `https://tranquil-oasis-93890.herokuapp.com/match_history?summoner_name=${encodeURIComponent(summoner_name)}`
+            `https://tranquil-oasis-93890.herokuapp.com/match_history/${encodeURIComponent(summoner_name)}`
         );
         const data = await response.json();
 
