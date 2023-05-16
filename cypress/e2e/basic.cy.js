@@ -4,8 +4,8 @@ describe('empty spec', () => {
   })
 
   it('displays the resources text', () => {
-    cy.get('h1')
-    .contains('irateplayers');
+    cy.get('h2')
+    .contains('iRate Players');
   })
   it('renders the form', () => {
     cy.get('form')

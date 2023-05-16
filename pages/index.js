@@ -24,7 +24,7 @@ export default function Home() {
     };
 
     return (
-    <div>
+        <div className="container">
       <Head>
           <title>i Rate Players</title>
           <meta name='description' content='Search league of legend summoners and rate their performances.' />
@@ -32,21 +32,18 @@ export default function Home() {
       </Head>
 
       <main>
-          <div className="container">
-              <div className="bg-blue-500 h-10 w-10"></div>
-        <Header title="Search to begin: Rate Players in LoL" />
         <hr />
-              <div className={`${styles.container} bg-dark-theme`}>
-                  <div className={`${styles.content} flex justify-center items-center h-screen`}>
-              <form onSubmit={handleSubmit} className={styles.form}>
+          <div className="bg-dark-theme h-screen flex justify-center items-center">
+              <div className="w-full max-w-md mx-auto mt-[-95%]">
+              <form onSubmit={handleSubmit} className="flex">
                   <input
                       type="text"
                       value={summonerName}
                       onChange={(e) => setSummonerName(e.target.value)}
                       placeholder="Enter summoner name"
-                      className={styles.input}
+                      className="flex-grow rounded-l-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
-                  <button type="submit" className={styles.button}>Search</button>
+                  <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg">Search</button>
               </form>
 
               {showMatchHistory && <MatchHistory summonerName={finalSummonerName} />}
@@ -54,7 +51,6 @@ export default function Home() {
               </div>
         <FeedbackForm />
         <JokeBlock />
-          </div>
       </main>
       <Footer />
     </div>

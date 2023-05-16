@@ -55,12 +55,12 @@ export default function MatchHistory({ summonerName }) {
             <table className="table">
                 <thead>
                 <tr>
-                    <th>Match ID</th>
-                    <th>Champion</th>
-                    <th>Result</th>
-                    <th>K</th>
-                    <th>D</th>
-                    <th>A</th>
+                    <th className="px-4 py-2">Match ID</th>
+                    <th className="px-4 py-2">Champion</th>
+                    <th className="px-4 py-2">Result</th>
+                    <th className="px-4 py-2">K</th>
+                    <th className="px-4 py-2">D</th>
+                    <th className="px-4 py-2">A</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -68,14 +68,14 @@ export default function MatchHistory({ summonerName }) {
                     const { win, champion, kills, deaths, assists } = getMatchResult(match);
 
                     return (
-                        <tr key={match.info.gameId} className="table-row"
+                        <tr key={match.info.gameId} className="table-row cursor-pointer hover:bg-red-500"
                             onClick={() => handleReport(match.info.gameId)} >
-                            <td>{match.info.gameId}</td>
-                            <td>{champion}</td>
-                            <td>{win}</td>
-                            <td>{kills}</td>
-                            <td>{deaths}</td>
-                            <td>{assists}</td>
+                            <td className="px-4 py-2">{match.info.gameId}</td>
+                            <td className="px-4 py-2">{champion}</td>
+                            <td className="px-4 py-2">{win}</td>
+                            <td className="px-4 py-2">{kills}</td>
+                            <td className="px-4 py-2">{deaths}</td>
+                            <td className="px-4 py-2">{assists}</td>
                         </tr>
                     );
                 })}
