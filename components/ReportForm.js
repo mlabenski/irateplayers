@@ -30,9 +30,9 @@ const ReportForm = ({ matchId, playerName }) => {
                     Don’t fill this out if you’re human: <input name="bot-field" />
                 </label>
             </p>
-            <label htmlFor="matchId">Name</label>
+            <label htmlFor="matchId">Match Id</label>
             <input type="hidden" name="matchId" id="matchId" type="text" value={matchId} />
-            <label htmlFor="playerName">Name</label>
+            <label htmlFor="playerName">Did u change</label>
             <input type="hidden" name="playerName" id="playerName" type="text" value={playerName} />
             <label htmlFor="email">Email</label>
             <input id="email" className={styles['form-field']} type="email" name="email" required />
