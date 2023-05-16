@@ -24,7 +24,7 @@ export default function Home() {
     };
 
     return (
-    <div className="container">
+    <div>
       <Head>
           <title>i Rate Players</title>
           <meta name='description' content='Search league of legend summoners and rate their performances.' />
@@ -32,6 +32,8 @@ export default function Home() {
       </Head>
 
       <main>
+          <div className="container">
+              <div className="bg-blue-500 h-10 w-10"></div>
         <Header title="Search to begin: Rate Players in LoL" />
         <hr />
               <div className={`${styles.container} bg-dark-theme`}>
@@ -50,12 +52,9 @@ export default function Home() {
               {showMatchHistory && <MatchHistory summonerName={finalSummonerName} />}
                 </div>
               </div>
-        <p className="description">
-          Here's an example of a Netlify Form! When you fill this out, the
-          submissions can be found in the Netlify Admin site.
-        </p>
         <FeedbackForm />
         <JokeBlock />
+          </div>
       </main>
       <Footer />
     </div>

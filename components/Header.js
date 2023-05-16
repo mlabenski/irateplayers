@@ -3,7 +3,7 @@ export default function Header({ title }) {
     <>
       <h1 className="title">{title}</h1>
       <p>
-        Hi 👋! Welcome to I_Rate_Players - Your League of Legends Grading Platform.{" "}
+        Hi! Welcome to I_Rate_Players - Your League of Legends Grading Platform.{" "}
         <a href="https://nextjs.org/">Review</a> previous matchese and file reports.{" "}
         <a href="https://www.netlify.com/products/functions/">
           I_Rate_Players
