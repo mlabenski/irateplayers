@@ -23,6 +23,7 @@ const ReportForm = ({ matchId, playerName }) => {
             name="report-form"
             method="POST"
             action="/success"
+            onSubmit={handleSubmit}
         >
             <input type="hidden" name="form-name" value="report-form" />
             <p className={styles.hidden}>

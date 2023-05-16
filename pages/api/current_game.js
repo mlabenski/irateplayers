@@ -3,7 +3,7 @@ export default async function handler(req, res) {
 
     try {
         const response = await fetch(
-            `http://127.0.0.1:5000/current_game/${encodeURIComponent(summoner_name)}`
+            `https://tranquil-oasis-93890.herokuapp.com/current_game/${encodeURIComponent(summoner_name)}`
         );
         const data = await response.json();
         console.log(`The Data submitted was ${data}`)
