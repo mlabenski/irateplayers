@@ -26,11 +26,13 @@ const Navbar = () => {
     return (
         <nav className="w-full bg-gray-800 shadow">
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
-                <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
-                        <a href="#">
-                            <h2 className="text-2xl text-white font-bold">iRate Players</h2>
-                        </a>
+                        <div className="navbar flex items-center">
+                            <a href="#" className="flex items-center">
+                                <img src="../smaller-irate-logo-only-img.png" alt="Logo" className="w-10 h-10" />
+                                <h2 className="text-2xl text-white font-bold ml-2">i Rate Players</h2>
+                            </a>
+
                         <div className="md:hidden">
                             <button
                                 className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"

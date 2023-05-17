@@ -63,7 +63,7 @@ export default function ReportForm({ matchId, playerName }) {
                 required
             ></textarea>
 
-            <button type="submit">Submit Report</button>
+            <button type="submit" className={styles.button} >Submit Report</button>
         </form>
     );
 }

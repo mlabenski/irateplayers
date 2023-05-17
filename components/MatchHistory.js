@@ -82,7 +82,9 @@ export default function MatchHistory({ summonerName }) {
                 </tbody>
             </table>
             {selectedMatchId && (
+                <div className="mt-30">
                     <ReportForm matchId={selectedMatchId} playerName={summonerName} />
+                </div>
             )}
         </div>
     );

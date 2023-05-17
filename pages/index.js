@@ -28,14 +28,14 @@ export default function Home() {
       <Head>
           <title>i Rate Players</title>
           <meta name='description' content='Search league of legend summoners and rate their performances.' />
-          <link rel='icon' href='/favicon.ico' />
+          <link rel='icon' href='/smaller-irate-logo-only-img.png' />
       </Head>
 
       <main>
         <hr />
           <div className="bg-dark-theme h-screen flex justify-center items-center">
-              <div className="w-full max-w-md mx-auto mt-[-95%]">
-              <form onSubmit={handleSubmit} className="flex">
+              <div className="w-full max-w-md mx-auto">
+              <form onSubmit={handleSubmit} className="flex mx-auto mt-[22%] px-3">
                   <input
                       type="text"
                       value={summonerName}
