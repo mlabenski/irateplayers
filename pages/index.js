@@ -31,21 +31,24 @@ export default function Home() {
 
             <main className="w-full">
                 <hr />
-                <div className="bg-dark-theme h-screen flex justify-center items-center">
+                <div className="bg-dark-theme min-h-screen flex flex-col items-center">
                     <div className="w-full mx-auto px-4">
-                        <form onSubmit={handleSubmit} className="flex justify-center mt-[22%]">
-                            <input
-                                type="text"
-                                value={summonerName}
-                                onChange={(e) => setSummonerName(e.target.value)}
-                                placeholder="Enter summoner name"
-                                className="flex-grow rounded-l-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            />
-                            <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg">Search</button>
-                        </form>
-
+                        {finalSummonerName === '' && (
+                            <form onSubmit={handleSubmit} className="flex justify-center mt-10">
+                                <input
+                                    type="text"
+                                    value={summonerName}
+                                    onChange={(e) => setSummonerName(e.target.value)}
+                                    placeholder="Enter summoner name"
+                                    className="flex-grow rounded-l-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                />
+                                <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg">Search</button>
+                            </form>
+                        )}
                     </div>
-                    {showMatchHistory && <MatchHistory summonerName={finalSummonerName} />}
+                    <div className="w-full flex justify-center items-start">
+                        {showMatchHistory && <MatchHistory summonerName={finalSummonerName} />}
+                    </div>
                 </div>
             </main>
             <Footer />
