@@ -1,5 +1,5 @@
 .table-container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -15,7 +15,7 @@
 .modal-main {
     position:fixed;
     background: white;
-    width: 80%;
+    width: 100%;
     height: auto;
     top:50%;
     left:50%;

@@ -16,12 +16,12 @@ body {
 }
 
 main {
-  padding: 2rem 20px;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 auto;
-  max-width: 60ch;
+  /* margin: 0 auto; */
+  /* max-width: 60ch; */
 }
 
 hr {
