@@ -12,7 +12,7 @@ export default function ReportForm({ matchId, playerName }) {
     };
 
     if (isSubmitted) {
-        return <p>Thank you for your report!</p>;
+        return <p>Thank you for your report !</p>;
     }
 
     return (
