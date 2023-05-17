@@ -13,7 +13,7 @@ export default function Home() {
         setSummonerName(event.target.value);
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = (event, summonerName) => {
         event.preventDefault();
         setFinalSummonerName(summonerName);
         setShowMatchHistory(true);
@@ -27,7 +27,7 @@ export default function Home() {
                 <meta name='description' content='Search league of legend summoners and rate their performances.' />
                 <link rel='icon' href='/smaller-irate-logo-only-img.png' />
             </Head>
-            <NavBar></NavBar>
+            <NavBar handleSubmit={handleSubmit}></NavBar>
 
             <main className="w-full">
                 <hr />

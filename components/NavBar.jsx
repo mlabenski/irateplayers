@@ -2,20 +2,22 @@ import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import 'tailwindcss/tailwind.css'
 
-const Navbar = () => {
+const Navbar = (props) => {
     const [nav, setNav] = useState(false);
     const [color, setColor] = useState('#e2e8f0');
     const [textColor, setTextColor] = useState('#e2e8f0');
     const [navbar, setNavbar] = useState(false);
     const [showSearchBar, setShowSearchBar] = useState(false); // Added this line
     const [summonerName, setSummonerName] = useState(""); // Added this line
+    const [finalSummonerName, setFinalSummonerName] = useState(""); // Added this line
+    const [showMatchHistory, setShowMatchHistory] = useState(false);
     const handleNav = () => {
         setNav(!nav);
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // handle the submit event
+        // Handle form submission, such as fetching the match history based on the summonerName
     };
 
     useEffect(() => {
@@ -98,7 +100,7 @@ const Navbar = () => {
                         </li>
                     </ul>
                     {showSearchBar && (
-                        <form onSubmit={handleSubmit} className="flex justify-center px-3">
+                        <form onSubmit={(e) => props.handleSubmit(e, summonerName)} className="flex justify-center px-3">
                             <input
                                 type="text"
                                 value={summonerName}
